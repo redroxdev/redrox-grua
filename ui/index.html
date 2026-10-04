@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartel de Grúa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="grua-container">
+        <div id="grua-card" class="card warning">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="icon-wrapper">
+                    <!-- Icono SVG de Grúa / Remolque -->
+                    <svg class="truck-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                        <path d="M15 18H9"/>
+                        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                        <circle cx="17" cy="18" r="2"/>
+                        <circle cx="7" cy="18" r="2"/>
+                    </svg>
+                </div>
+                <div class="text-wrapper">
+                    <div class="title-row">
+                        <span class="badge" id="grua-badge">AVISO MUNICIPAL</span>
+                        <h2 class="title" id="grua-title">GRÚA EN CAMINO</h2>
+                    </div>
+                    <p class="description" id="grua-desc">La grúa pasará a remolcar vehículos vacíos en <strong id="grua-time">30</strong>s</p>
+                </div>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="grua-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

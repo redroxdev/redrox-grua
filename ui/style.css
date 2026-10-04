@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: transparent !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#grua-container {
+    position: fixed;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 999999;
+}
+
+#grua-container.show {
+    display: block;
+    animation: bannerSlideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bannerSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-35px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+.card {
+    position: relative;
+    min-width: 440px;
+    max-width: 550px;
+    background: rgba(15, 18, 26, 0.95);
+    border-radius: 14px;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card.success {
+    border-color: rgba(34, 197, 94, 0.55);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(34, 197, 94, 0.25);
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 16px;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #f59e0b;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.card.success .icon-wrapper {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.35);
+    color: #22c55e;
+}
+
+.truck-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex-grow: 1;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.card.success .badge {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: 13px;
+    color: #e5e7eb;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.description strong {
+    color: #fbbf24;
+    font-weight: 800;
+    font-size: 14px;
+    display: inline-block;
+    min-width: 18px;
+    text-align: center;
+}
+
+.card.success .description strong {
+    color: #4ade80;
+}
+
+.progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    transition: width 1s linear;
+}
+
+.card.success .progress-fill {
+    background: linear-gradient(90deg, #16a34a, #4ade80);
+    width: 100% !important;
+}
+
+.pulse-anim {
+    animation: numberPulse 0.35s ease;
+}
+
+@keyframes numberPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); color: #ffffff; text-shadow: 0 0 10px #f59e0b; }
+    100% { transform: scale(1); }
+}
